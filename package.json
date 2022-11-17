@@ -1,0 +1,11 @@
+{
+  "name": "zenn-contents",
+  "private": true,
+  "scripts": {
+    "dev": "zenn preview"
+  },
+  "packageManager": "yarn@3.3.0",
+  "devDependencies": {
+    "zenn-cli": "^0.1.132"
+  }
+}
