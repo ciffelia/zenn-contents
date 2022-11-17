@@ -1,13 +1,13 @@
 ---
-title: "systemdでサーバーを定期的に再起動させる"
-emoji: "⏰"
-type: "tech"
+title: 'systemdでサーバーを定期的に再起動させる'
+emoji: '⏰'
+type: 'tech'
 topics:
-  - "systemd"
-  - "linux"
-  - "cron"
+  - 'systemd'
+  - 'linux'
+  - 'cron'
 published: true
-published_at: "2021-09-28 00:23"
+published_at: '2021-09-28 00:23'
 ---
 
 様々な事情で Linux マシンを定期的に再起動させたいことがある。cron を使うのがいちばんシンプルな方法ではあるが、今回は systemd のタイマー機能を使って実現してみる。
@@ -26,7 +26,7 @@ RefuseManualStop = true
 ExecStart = /sbin/reboot
 ```
 
-2. `/etc/systemd/system/reboot.timer` をつくる。この例では、日本時間で毎週月曜日の午前3時を指定した。
+2. `/etc/systemd/system/reboot.timer` をつくる。この例では、日本時間で毎週月曜日の午前 3 時を指定した。
 
 ```systemd
 [Unit]
@@ -45,9 +45,9 @@ WantedBy = timers.target
 
 # ポイント
 
-## 1. 再起動時刻は最大で1分遅れることがある
+## 1. 再起動時刻は最大で 1 分遅れることがある
 
-先述した例では省略しているが、`[Timer]` には `AccuracySec` という設定項目があり、デフォルトでは `1m` (1分)になっている。このとき、タイマーは `OnCalendar` で指定した時間から1分以内の適当なタイミングで実行される（`OnCalendar` で指定した時間より前に実行されることはない）。
+先述した例では省略しているが、`[Timer]` には `AccuracySec` という設定項目があり、デフォルトでは `1m` (1 分)になっている。このとき、タイマーは `OnCalendar` で指定した時間から 1 分以内の適当なタイミングで実行される（`OnCalendar` で指定した時間より前に実行されることはない）。
 正確に `3:00:00` に再起動を始めたい場合は、`AccuracySec = 1s` と設定する。
 
 ## 2. `reboot.service` に `WantedBy = multi-user.target` を書かない
