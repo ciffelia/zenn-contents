@@ -6,6 +6,8 @@
     ':prHourlyLimitNone',
     ':prConcurrentLimitNone',
   ],
+  timezone: 'Asia/Tokyo',
+  schedule: ['every weekend'],
   packageRules: [
     {
       matchManagers: ['npm'],
