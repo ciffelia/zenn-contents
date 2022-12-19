@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "prettier": "^2.7.1",
-    "zenn-cli": "^0.1.132"
+    "zenn-cli": "^0.1.134"
   },
   "packageManager": "yarn@3.3.0"
 }
