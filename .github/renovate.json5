@@ -1,0 +1,19 @@
+{
+  extends: [
+    'config:base',
+    ':semanticCommitsDisabled',
+    ':prHourlyLimitNone',
+    ':prConcurrentLimitNone',
+  ],
+  packageRules: [
+    {
+      matchManagers: ['npm'],
+      rangeStrategy: 'bump',
+    },
+    {
+      matchPackageNames: ['prettier'],
+      matchUpdateTypes: ['minor', 'patch'],
+      automerge: true,
+    },
+  ],
+}
