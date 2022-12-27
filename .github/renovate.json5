@@ -14,7 +14,8 @@
       rangeStrategy: 'bump',
     },
     {
-      matchPackageNames: ['prettier'],
+      matchManagers: ['npm'],
+      matchPackageNames: ['prettier', 'yarn'],
       matchUpdateTypes: ['minor', 'patch'],
       automerge: true,
     },
