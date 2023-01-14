@@ -15,7 +15,7 @@
     },
     {
       matchManagers: ['npm'],
-      matchPackageNames: ['prettier', 'yarn'],
+      matchPackageNames: ['prettier', 'zenn-cli', 'yarn'],
       matchUpdateTypes: ['minor', 'patch'],
       automerge: true,
     },
