@@ -10,5 +10,5 @@
     "prettier": "^2.8.3",
     "zenn-cli": "^0.1.137"
   },
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "yarn@3.4.1"
 }
