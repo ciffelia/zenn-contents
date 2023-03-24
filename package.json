@@ -7,7 +7,7 @@
     "fix": "prettier --write ."
   },
   "devDependencies": {
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "zenn-cli": "^0.1.141"
   },
   "packageManager": "yarn@3.5.0"
