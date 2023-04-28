@@ -14,12 +14,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zenn-cli@npm:^0.1.142":
-  version: 0.1.142
-  resolution: "zenn-cli@npm:0.1.142"
+"zenn-cli@npm:^0.1.143":
+  version: 0.1.143
+  resolution: "zenn-cli@npm:0.1.143"
   bin:
     zenn: dist/server/zenn.js
-  checksum: 01902e32893053997c8be8109b81afe69319e59f0394e6c486d5f3a1ade73142e3bfc7a1368fc17c42d375dc4335e114b1ddb1fbaddc30b05b56dc28a2069eff
+  checksum: c45128ebad99e2c1211f8e76b2bb15b351b4e8dc94aa502d60101241ea026f94590fd546a13c163940f3b7e41aef51bd16a9dbc438b679659ea7089b98d56339
   languageName: node
   linkType: hard
 
@@ -28,6 +28,6 @@ __metadata:
   resolution: "zenn-contents@workspace:."
   dependencies:
     prettier: ^2.8.8
-    zenn-cli: ^0.1.142
+    zenn-cli: ^0.1.143
   languageName: unknown
   linkType: soft
