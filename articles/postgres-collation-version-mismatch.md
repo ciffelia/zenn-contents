@@ -6,7 +6,7 @@ topics:
   - 'postgresql'
   - 'database'
   - 'rdb'
-published: false
+published: true
 ---
 
 PostgreSQL を使っていると、以下のようなエラーが出ることがあります。この記事ではこのエラーの原因と対処法について解説します。
