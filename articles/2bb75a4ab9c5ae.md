@@ -16,7 +16,7 @@ published_at: '2021-09-28 00:23'
 
 1. `/etc/systemd/system/reboot.service` をつくる。
 
-```systemd
+```systemd:/etc/systemd/system/reboot.service
 [Unit]
 Description = Reboot
 RefuseManualStart = true
@@ -28,7 +28,7 @@ ExecStart = /sbin/reboot
 
 2. `/etc/systemd/system/reboot.timer` をつくる。この例では、日本時間で毎週月曜日の午前 3 時を指定した。
 
-```systemd
+```systemd:/etc/systemd/system/reboot.timer
 [Unit]
 Description = Weekly Reboot Timer
 
