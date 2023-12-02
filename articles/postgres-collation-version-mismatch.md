@@ -1,5 +1,5 @@
 ---
-title: '【PostgreSQL】「database "foo" has a collation version mismatch」への対処法'
+title: '【PostgreSQL】「database has a collation version mismatch」への対処法'
 emoji: '🕌'
 type: 'tech'
 topics:
@@ -9,7 +9,7 @@ topics:
 published: true
 ---
 
-PostgreSQLを使っていると、以下のようなエラーが出ることがあります。この記事ではこのエラーの原因と対処法について解説します。
+PostgreSQLを使っていると次のエラーに遭遇することがあります。この記事ではこのエラーの原因と対処法について解説します。
 
 ```
 2023-07-02 06:27:49.880 UTC [338] WARNING:  database "foo" has a collation version mismatch
@@ -22,7 +22,7 @@ PostgreSQLを使っていると、以下のようなエラーが出ることが�
 次のクエリを実行すると解決します。
 
 :::message
-念のため、実行前にデータベースのバックアップを取得してください。
+通常このクエリでDBが壊れることはありませんが、実行前には必ずバックアップを取得してください。
 :::
 
 ```sql
@@ -32,12 +32,12 @@ ALTER DATABASE foo REFRESH COLLATION VERSION;
 ```
 
 :::message alert
-`REINDEX`にかかる時間はインデックスの大きさによって異なります。`REINDEX`の実行中は、そのインデックスの元となるテーブルへの書き込みと、そのインデックスを使用する読み込みがブロックされます。稼働中のデータベースで実行する場合はユーザーに与える影響を考慮してください。
+`REINDEX`にかかる時間はインデックスの大きさによって異なります。`REINDEX`の実行中は、そのインデックスの元となるテーブルへの書き込みと、そのインデックスを使用する読み込みがブロックされます。稼働中のデータベースで実行する場合はユーザーへの影響に注意してください。
 :::
 
 # 原因
 
-PostgreSQLは、データベースの照合順序 (collation)を計算するためにlibcまたはICUを使用します。データベースを作成した時点でのlibcまたはICU のバージョンと、現在のバージョンが異なる場合、インデックスが破損する危険性があるためこのような警告が表示されます。
+PostgreSQLは、データベースの照合順序 (collation)を計算するためにlibcまたはICUを使用します。データベースを作成した時点でのlibcまたはICUのバージョンと、現在のバージョンが異なる場合、インデックスが破損する危険性があるためこのような警告が表示されます。
 私のケースでは、OSのアップデートでlibcのバージョンがv2.31からv2.36に変わったためこのような警告が表示されていたようです。
 
 これを解決するには、`REINDEX`でインデックスを再構築し、`ALTER DATABASE foo REFRESH COLLATION VERSION`でデータベースに記録されている照合順序のバージョン（libcやICUのバージョン）を更新する必要があります。
