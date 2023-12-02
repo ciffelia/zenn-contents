@@ -12,7 +12,7 @@ published: true
 
 # バックアップ
 
-Docker ボリュームの実体は`/var/lib/docker/volumes/$VOLUME_NAME/_data`にあります。tar を使うことで、パーミッションや所有者といったメタデータを含めてバックアップできます。
+Dockerボリュームの実体は`/var/lib/docker/volumes/$VOLUME_NAME/_data`にあります。tarを使うことで、パーミッションや所有者といったメタデータを含めてバックアップできます。
 
 ```sh
 VOLUME_NAME=test_volume
@@ -23,7 +23,7 @@ sudo tar -czf "$BACKUP_DESTINATION" -C "/var/lib/docker/volumes/$VOLUME_NAME" _d
 
 # 復元
 
-復元する際は、`--preserve-permissions --numeric-owner`を指定するとメタデータを保持して展開できます。`--numeric-owner`を指定しないと UID や GID が書き換わってしまうことがあるので注意が必要です[^1]。
+復元する際は、`--preserve-permissions --numeric-owner`を指定するとメタデータを保持して展開できます。`--numeric-owner`を指定しないとUIDやGIDが書き換わってしまうことがあるので注意が必要です[^1]。
 
 ```sh
 VOLUME_NAME=test_volume

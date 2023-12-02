@@ -10,11 +10,11 @@ published: true
 published_at: '2021-09-28 22:37'
 ---
 
-先程 Docker Compose v2.0.0 がリリースされた。[公式ブログ](https://www.docker.com/blog/)等では言及されていないが、おそらく Compose v2 の正式リリース版ではないかと思われる。
+先程Docker Compose v2.0.0がリリースされた。[公式ブログ](https://www.docker.com/blog/)等では言及されていないが、おそらくCompose v2の正式リリース版ではないかと思われる。
 
 https://github.com/docker/compose/releases/tag/v2.0.0
 
-v1 は単独のバイナリ（`docker-compose`）として配布されていたが、v2 は CLI plugin として配布されているため、`$HOME/.docker/cli-plugins`にインストールする必要がある。
+v1は単独のバイナリ（`docker-compose`）として配布されていたが、v2はCLI pluginとして配布されているため、`$HOME/.docker/cli-plugins`にインストールする必要がある。
 
 ```sh
 mkdir -p $HOME/.docker/cli-plugins

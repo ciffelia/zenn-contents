@@ -11,11 +11,11 @@ topics:
 published: true
 ---
 
-Next.js で Twitter 上の投稿を埋め込む方法を解説します。
+Next.jsでTwitter上の投稿を埋め込む方法を解説します。
 
 # 手順
 
-ページコンポーネントで`next/script`を使って`widgets.js`を読み込み、ツイートを表示したいコンポーネントで`widgets.js`が認識してくれる埋め込みコードを挿入すれば OK です。
+ページコンポーネントで`next/script`を使って`widgets.js`を読み込み、ツイートを表示したいコンポーネントで`widgets.js`が認識してくれる埋め込みコードを挿入すればOKです。
 
 ```tsx:pages/index.tsx
 import React from 'react';
@@ -65,7 +65,7 @@ const generateEmbedHtml = (id: string): string => {
 
 # 実装上の注意点
 
-実装にあたり注意が必要な罠が 2 つあります。
+実装にあたり注意が必要な罠が2つあります。
 
 :::message
 上記のコードではいずれの問題も回避しています。
@@ -73,7 +73,7 @@ const generateEmbedHtml = (id: string): string => {
 
 ## 1. `dangerouslySetInnerHTML`を使う必要がある
 
-`widgets.js`は DOM ツリー上で`.twitter-tweet`の要素を書き換えてしまうので、それらの要素は`dangerouslySetInnerHTML`で挿入し React の管理下から外す必要があります。
+`widgets.js`はDOMツリー上で`.twitter-tweet`の要素を書き換えてしまうので、それらの要素は`dangerouslySetInnerHTML`で挿入しReactの管理下から外す必要があります。
 
 ```tsx
 // ⭕ OK
@@ -100,6 +100,6 @@ https://penpen-dev.com/blog/react-tweet-error/
 
 上記のコードでは`useEffect`において、`window.twttr`が存在する場合は`twttr.widgets.load()`を呼ぶようにしています。
 
-詳細は Twitter のドキュメントに記載されています。
+詳細はTwitterのドキュメントに記載されています。
 
 https://developer.twitter.com/en/docs/twitter-for-websites/javascript-api/guides/scripting-loading-and-initialization
