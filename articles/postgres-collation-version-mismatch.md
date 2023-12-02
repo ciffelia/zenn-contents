@@ -1,5 +1,5 @@
 ---
-title: '【PostgreSQL】「database has a collation version mismatch」への対処法'
+title: '【PostgreSQL】database has a collation version mismatchへの対処法'
 emoji: '🕌'
 type: 'tech'
 topics:
