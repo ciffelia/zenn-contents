@@ -5,21 +5,21 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
-"prettier@npm:^2.8.8":
-  version: 2.8.8
-  resolution: "prettier@npm:2.8.8"
+"prettier@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "prettier@npm:3.1.0"
   bin:
-    prettier: bin-prettier.js
-  checksum: 463ea8f9a0946cd5b828d8cf27bd8b567345cf02f56562d5ecde198b91f47a76b7ac9eae0facd247ace70e927143af6135e8cf411986b8cb8478784a4d6d724a
+    prettier: bin/prettier.cjs
+  checksum: a45ea70aa97fde162ea4c4aba3dfc7859aa6a732a1db34458d9535dc3c2c16d3bc3fb5689e6cd76aa835562555303b02d9449fd2e15af3b73c8053557e25c5b6
   languageName: node
   linkType: hard
 
-"zenn-cli@npm:^0.1.144":
-  version: 0.1.144
-  resolution: "zenn-cli@npm:0.1.144"
+"zenn-cli@npm:^0.1.150":
+  version: 0.1.150
+  resolution: "zenn-cli@npm:0.1.150"
   bin:
     zenn: dist/server/zenn.js
-  checksum: 03dc15fe833d3415bfd7580443b691da6dc2160bc375d44c94355de685f64f5651d90717b261e519df2260ebd9e7365d01c69854c0fa3137126bc09d242f3a53
+  checksum: f5091d85808d562cffec5456e935ed8817ef6e2253b26134b8c74711d6bf3b70794599710c3ee82016a84e67851a18c07e2e20c7b3730fd32ef3c5fb94c1277a
   languageName: node
   linkType: hard
 
@@ -27,7 +27,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zenn-contents@workspace:."
   dependencies:
-    prettier: "npm:^2.8.8"
-    zenn-cli: "npm:^0.1.144"
+    prettier: "npm:^3.1.0"
+    zenn-cli: "npm:^0.1.150"
   languageName: unknown
   linkType: soft

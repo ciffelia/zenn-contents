@@ -3,12 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "zenn preview",
-    "lint": "prettier --check .",
-    "fix": "prettier --write ."
+    "lint": "prettier --ignore-path=.prettierignore --check .",
+    "fix": "prettier --ignore-path=.prettierignore --write ."
   },
   "devDependencies": {
-    "prettier": "^2.8.8",
-    "zenn-cli": "^0.1.144"
+    "prettier": "^3.1.0",
+    "zenn-cli": "^0.1.150"
   },
   "packageManager": "yarn@4.0.2"
 }
