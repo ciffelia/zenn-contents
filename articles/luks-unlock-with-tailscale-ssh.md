@@ -51,7 +51,7 @@ sudo apt-get install dropbear-initramfs
 
 SSHの公開鍵を登録します。
 
-```
+```sh
 echo 'ssh-ed25519 ...' | sudo tee -a /etc/dropbear/initramfs/authorized_keys
 sudo chmod 600 /etc/dropbear/initramfs/authorized_keys
 ```
