@@ -7,8 +7,8 @@
     "fix": "prettier --ignore-path=.prettierignore --write ."
   },
   "devDependencies": {
-    "prettier": "^3.1.0",
-    "zenn-cli": "^0.1.150"
+    "prettier": "^3.3.0",
+    "zenn-cli": "^0.1.153"
   },
   "packageManager": "yarn@4.2.2"
 }
