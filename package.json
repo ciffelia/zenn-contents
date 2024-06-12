@@ -3,11 +3,11 @@
   "private": true,
   "scripts": {
     "dev": "zenn preview",
-    "lint": "prettier --ignore-path=.prettierignore --check .",
-    "fix": "prettier --ignore-path=.prettierignore --write ."
+    "lint": "markdownlint-cli2 {articles,books}/**/*.md",
+    "fix": "markdownlint-cli2 {articles,books}/**/*.md --fix"
   },
   "devDependencies": {
-    "prettier": "^3.3.2",
+    "markdownlint-cli2": "^0.13.0",
     "zenn-cli": "^0.1.154"
   },
   "packageManager": "yarn@4.2.2"
