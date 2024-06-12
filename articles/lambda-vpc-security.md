@@ -65,7 +65,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#configuratio
 ```
 
 このポリシーではIAM条件キー`lambda:SourceFunctionArn`を使用しています。
-Lambda関数の実行環境からAWS APIにリクエストを送信すると、関数のARNが`lambda:SourceFunctionArn`としてコンテキストに挿入されます。一方でLambdaサービスがENIの作成を行う際には、`lambda:SourceFunctionArn`はセットされません。この挙動は以下のページに明記されています。
+Lambda関数の実行環境からAWS APIにリクエストを送信すると、関数のARNが`lambda:SourceFunctionArn`としてコンテキストに挿入されます。一方でLambdaサービスがENIの作成を行う際には`lambda:SourceFunctionArn`はセットされません。この挙動は以下のページに明記されています。
 
 https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/permissions-source-function-arn.html
 
