@@ -9,7 +9,7 @@ topics:
 published: false
 ---
 
-# VPC Lambdaの仕組み
+## VPC Lambdaの仕組み
 
 AWSでは、Lambda関数がVPC内のリソースにアクセスできるよう設定することができます。この機能は、Lambda関数の実行時にENIをVPC内に自動作成することで実現されています。
 
@@ -35,12 +35,12 @@ AWSでは、Lambda関数がVPC内のリソースにアクセスできるよう�
 
 https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#configuration-vpc-permissions
 
-# 問題点
+## 問題点
 
 上記のポリシーにはセキュリティ上の懸念があります。関数の実行ロールに上記のアクセスポリシーを追加するということは、Lambda関数が上記の操作を自由に行えるということです。
 すなわち、**Lambda関数のコードからENIの作成や削除、プライベートIPの付け替えが自由にできるようになってしまいます**。これは最小権限の原則の観点から望ましくないでしょう。
 
-# 解決策
+## 解決策
 
 この問題を解決するのに必要なアクセス許可は、**LambdaサービスはENIの作成を行うことができるが、Lambda関数の実行環境からはそれができない**、といったものです。これは以下のポリシーにより実現できます。
 
@@ -71,7 +71,7 @@ https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/permissions-source-function-a
 
 上記のポリシーではこの仕様を利用し、`lambda:SourceFunctionArn`がセットされていない場合のみENIの作成を許可しています。
 
-# 参考
+## 参考
 
 この記事は、以下の公式ドキュメントの節「Security best practices」の内容に沿っています。
 
