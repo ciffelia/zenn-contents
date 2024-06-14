@@ -11,12 +11,12 @@ published: false
 
 ## VPC Lambdaの仕組み
 
-AWSでは、Lambda関数がVPC内のリソースにアクセスできるよう設定することができます。この機能は、Lambda関数の実行時にENIをVPC内に自動作成することで実現されています。
+AWS Lambdaでは、Lambda関数がVPC内のリソースにアクセスできるよう設定することができます。この機能を有効にすると、Lambda関数の実行時にENIがVPC内に自動で作成されます。
 
 ![VPC Lambdaのアーキテクチャ](/images/lambda-vpc-security/architecture.png)
 *[[発表] Lambda 関数が VPC 環境で改善されます | Amazon Web Services ブログ](https://aws.amazon.com/jp/blogs/news/announcing-improved-vpc-networking-for-aws-lambda-functions/) より引用*
 
-そのため、関数をVPCにアタッチするには、関数の実行ロールに以下のアクセスポリシーを追加するか、同等のAWS管理ポリシー[`AWSLambdaVPCAccessExecutionRole`](https://docs.aws.amazon.com/ja_jp/aws-managed-policy/latest/reference/AWSLambdaVPCAccessExecutionRole.html)を追加しなければならないとAWS公式ドキュメントに書かれています。
+そのため、この機能を使用するには、関数の実行ロールに以下のアクセスポリシーを追加するか、同等のAWS管理ポリシー[`AWSLambdaVPCAccessExecutionRole`](https://docs.aws.amazon.com/ja_jp/aws-managed-policy/latest/reference/AWSLambdaVPCAccessExecutionRole.html)を追加しなければならないとAWS公式ドキュメントに書かれています。
 
 ```json
 {
@@ -42,7 +42,7 @@ https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html#configuratio
 
 ## 解決策
 
-この問題を解決するのに必要なアクセス許可は、**LambdaサービスはENIの作成を行うことができるが、Lambda関数の実行環境からはそれができない**、といったものです。これは以下のポリシーにより実現できます。
+以下のポリシーを設定すると、**LambdaサービスにのみENIの作成を許可し、Lambda関数のコードにはそのような操作を許可しない**、というアクセス許可が実現できます。
 
 ```json
 {
