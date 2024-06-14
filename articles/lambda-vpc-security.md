@@ -6,7 +6,7 @@ topics:
   - aws
   - lambda
   - vpc
-published: false
+published: true
 ---
 
 ## VPC Lambdaの仕組み
