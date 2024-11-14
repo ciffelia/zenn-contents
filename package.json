@@ -7,8 +7,8 @@
     "fix": "markdownlint-cli2 {articles,books}/**/*.md --fix"
   },
   "devDependencies": {
-    "markdownlint-cli2": "^0.14.0",
-    "zenn-cli": "^0.1.157"
+    "markdownlint-cli2": "^0.15.0",
+    "zenn-cli": "^0.1.158"
   },
   "packageManager": "yarn@4.5.1"
 }
