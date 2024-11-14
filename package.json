@@ -10,5 +10,5 @@
     "markdownlint-cli2": "^0.14.0",
     "zenn-cli": "^0.1.157"
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.5.1"
 }
