@@ -64,7 +64,7 @@ https://github.com/ciffelia/web-speed-hackathon-2025/commit/87c76995fed6db00e2d6
 
 https://github.com/ciffelia/web-speed-hackathon-2025/commit/405e497357ccd069a9e866df4e215d86a8c7c63a
 
-サーバー上でSSRの結果を捨てているコードがあったので、きちんとクライアントに送るよう修正しました。うまくいけばLCPを大きく改善できるはずです。しかし実際にはこのコミットでは正しく修正できておらず、このあと何度もHydration Errorを含むSSR関連の問題にに対処することになってしまいます。
+サーバー上でSSRの結果を捨てているコードがあったので、きちんとクライアントに送るよう修正しました。うまくいけばLCPを大きく改善できるはずです。しかし実際にはこのコミットでは正しく修正できておらず、このあと何度もHydration Errorを含むSSR関連の問題に対処することになってしまいます。
 
 ### Webpack Bundle Analyzer導入
 
