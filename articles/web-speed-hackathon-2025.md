@@ -218,7 +218,7 @@ https://github.com/ciffelia/web-speed-hackathon-2025/commit/13301ba730ec10cfc098
 
 ビルド高速化のためRspackを導入しました。Watch modeでdevelopment buildが300msで終わるようになり爆速です。
 
-なぜか`builtin:swc-loader`が動かなかったので素の`swc-loader`をつかっていますが、それでも十分早いです。
+なぜか`builtin:swc-loader`が動かなかったので素の`swc-loader`をつかっていますが、それでも十分速いです。
 
 ### 無駄なSleep削除
 
