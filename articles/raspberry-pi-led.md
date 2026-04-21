@@ -3,7 +3,7 @@ title: Raspberry PiのLEDを緑色だけ点灯させる
 emoji: 💡
 type: tech
 topics:
-  - raspberry-pi
+  - raspberrypi
 published: true
 ---
 
