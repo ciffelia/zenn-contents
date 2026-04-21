@@ -1,25 +1,43 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   deps:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
         with:
-          node-version: 22
-          cache: yarn
-      - run: yarn install --immutable
+          persist-credentials: false
+
+      - uses: pnpm/action-setup@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
 
   lint:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
       - uses: DavidAnson/markdownlint-cli2-action@v19
         with:
           globs: "{articles,books}/**/*.md"
