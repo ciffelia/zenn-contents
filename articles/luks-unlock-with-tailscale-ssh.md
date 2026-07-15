@@ -113,3 +113,13 @@ ssh root@my-hostname-initramfs
 ```sh
 cryptroot-unlock
 ```
+
+## 追記
+
+対象マシンがVMの場合は，シリアルコンソールからパスフレーズを入力できるようにすると便利です．
+
+```
+GRUB_CMDLINE_LINUX="console=tty0 console=ttyS0,115200"
+```
+
+この場合，ハイパーバイザにTailscaleでアクセスできれば，VMのinitramfsにTailscaleとDropbearを入れる必要はなくなります．
