@@ -18,7 +18,7 @@ LUKSによるルートパーティションの暗号化を、Tailscale + SSHで�
 
 initramfsからインターネットに接続するために、IPアドレス等の設定を行います。DHCPを使用する場合はこの項目はスキップできます。
 
-`/etc/default/grub`を編集し、`GRUB_CMDLINE_LINUX_DEFAULT`に`ip=`を追加します。
+`/etc/default/grub`を編集し、`GRUB_CMDLINE_LINUX`に`ip=`を追加します。
 
 ```
 GRUB_CMDLINE_LINUX="ip=<client-ip>:<server-ip>:<gw-ip>:<netmask>:<hostname>:<device>:<autoconf>:<dns0-ip>:<dns1-ip>:<ntp0-ip>"
