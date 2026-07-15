@@ -14,7 +14,7 @@ LUKSによるルートパーティションの暗号化を、Tailscale + SSHで�
 
 ルートパーティションの暗号化は完了しており、マシンに物理的にアクセスすれば暗号化を解除できる状態になっているものとします。
 
-# 1. initramfsで使用するIPアドレスの設定
+## 1. initramfsで使用するIPアドレスの設定
 
 initramfsからインターネットに接続するために、IPアドレス等の設定を行います。DHCPを使用する場合はこの項目はスキップできます。
 
@@ -40,7 +40,7 @@ https://www.kernel.org/doc/html/v6.6/admin-guide/kernel-parameters.html
 
 https://www.kernel.org/doc/html/v6.6/admin-guide/nfs/nfsroot.html
 
-# 2. dropbear-initramfsの設定
+## 2. dropbear-initramfsの設定
 
 軽量SSH実装のDropbearをinitramfsに入れます。
 
@@ -56,7 +56,7 @@ echo 'ssh-ed25519 ...' | sudo tee -a /etc/dropbear/initramfs/authorized_keys
 sudo chmod 600 /etc/dropbear/initramfs/authorized_keys
 ```
 
-# 3. tailscale-initramfsの設定
+## 3. tailscale-initramfsの設定
 
 Tailscaleをinitramfsに入れます。今回は次の実装を利用します。
 
@@ -85,7 +85,7 @@ sudo vi /etc/tailscale/initramfs/config
 Auth keyは平文でinitramfsに保存されます。この鍵を使用するとTailnetにデバイスを追加できるため、必ず適切なACLを設定してください。
 :::
 
-# 4. initramfsの再構築
+## 4. initramfsの再構築
 
 initramfsを再構築します。
 
@@ -94,7 +94,7 @@ update-initramfs -c -k all
 update-grub
 ```
 
-# 5. リブート
+## 5. リブート
 
 再起動して動作を確認します。
 
