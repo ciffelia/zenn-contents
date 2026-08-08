@@ -18,7 +18,7 @@ Dockerボリュームの実体は`/var/lib/docker/volumes/$VOLUME_NAME/_data`に
 VOLUME_NAME=test_volume
 BACKUP_DESTINATION=./backup.tar.gz
 
-sudo tar -czf "$BACKUP_DESTINATION" -C "/var/lib/docker/volumes/$VOLUME_NAME" _data
+sudo tar -caf "$BACKUP_DESTINATION" -C "/var/lib/docker/volumes/$VOLUME_NAME" _data
 ```
 
 # 復元
@@ -31,7 +31,7 @@ RESTORE_SOURCE=./backup.tar.gz
 
 docker volume create "$VOLUME_NAME"
 sudo rm -r "/var/lib/docker/volumes/$VOLUME_NAME/_data"
-sudo tar -xzf "$RESTORE_SOURCE" -C "/var/lib/docker/volumes/$VOLUME_NAME" --preserve-permissions --numeric-owner
+sudo tar -xf "$RESTORE_SOURCE" -C "/var/lib/docker/volumes/$VOLUME_NAME" --preserve-permissions --numeric-owner
 ```
 
 [^1]: https://jigoku1119.hatenablog.jp/entry/2019/11/08/170050
