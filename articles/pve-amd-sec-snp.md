@@ -7,7 +7,7 @@ topics:
   - 秘密計算
   - amd
   - tee
-published: false
+published: true
 ---
 
 Proxmox VEでAMD SEV-SNPを有効化し、実際に仮想マシンを起動してみます。
