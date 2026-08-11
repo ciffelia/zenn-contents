@@ -166,7 +166,7 @@ snpguestをビルドします。本稿で使用したsnpguestのリビジョン�
 ```bash
 ubuntu@exp-sev-snp:~$ git clone https://github.com/virtee/snpguest.git
 ubuntu@exp-sev-snp:~$ cd snpguest
-ubuntu@exp-sev-snp:~$ git switch -d fbee62eb04aab08f4f55e7d9d613a39ba20e87cc
+ubuntu@exp-sev-snp:~/snpguest$ git switch -d fbee62eb04aab08f4f55e7d9d613a39ba20e87cc
 ubuntu@exp-sev-snp:~/snpguest$ cargo build --release
 ```
 
